@@ -1,0 +1,7 @@
+
+
+fatorial -> O(N)
+
+
+taylor O(K)
+

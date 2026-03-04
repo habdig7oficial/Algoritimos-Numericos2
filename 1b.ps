@@ -1,0 +1,26 @@
+FUNCAO fatorial(PARAMETRO: numero) FACA
+    se numero igual 0 
+        RETORNE 1
+    senao 
+        RETORNE numero * fatorial(numero - 1)
+FIM fatorial
+
+
+FUNCAO taylor(PARAMETRO: x, PARAMETRO: passo) FACA
+    RETORNE (x ** passo) / fatorial(passo)
+FIM taylor
+
+FUNCAO soma(PARAMETRO: limite, PARAMETRO: lambda, PARAMETRO: prescisao) FACA
+    sum = 0 
+    iterador = 0
+
+    ENQUANTO iterador < prescisao FACA
+        sum = sum + lambda(limite, iterador)
+        iterador = iterador + 1
+    FIM ENQUANTO
+    RETORNE sum
+
+FIM soma
+
+
+soma(3, taylor, 10)
