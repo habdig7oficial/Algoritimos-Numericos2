@@ -3,6 +3,9 @@
 =end
 
 class Numeric
+
+    # New number is O(N) complexity
+    # Precalculated number is O(1)
     @@arr = []
     def fact(num)
         if num == 0
@@ -15,10 +18,12 @@ class Numeric
         end
     end
 
+    # If fact is already calculate this function is O(1)
     def calc(x, step)
         return (x ** step.to_f) / fact(step)
     end
 
+    # Always O(N) external loop 
     def sum(limit, func, precision)
         sum = 0.0 
         i = 0
@@ -35,6 +40,32 @@ class Numeric
 
 end
 
+=begin
+    Exercício 2
+
+    outer loop -> O(N)
+
+    factorial -> first time = O(N) 
+              -> other times = O(1) [because of memorization]
+
+    calc func -> O(1) multiplication cost, since x ** y is native
+
+    my implementation: 
+    O(N) + O(N) * O(1) * O(1) = O(N)
+    |      |        |       |
+    |      |        |       |-> power and division
+    |      |        |
+    |      |        |-> Subsequent factorials
+    |      |
+    |      |-> First Factorial
+    |
+    |-> Outer loop sum
+
+    naive implementation {if fact cost O(N) every time}:
+    O(N) n * O(N) * O(1) * O(1) = O(N ** 2
+    
+    
+=end
 
 =begin
     Exercício 3
@@ -70,4 +101,8 @@ puts "Relative Error #{err_rel10}"
 
     Precision 10: 20.063392857142855
     Absolute Error 0.022144066044813115
+
+    Conclusion: 
+    
+    The aproximation with 10 decimal digits have a smaller error therfore it's more prescise
 =end
