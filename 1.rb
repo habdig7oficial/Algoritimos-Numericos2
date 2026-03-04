@@ -62,7 +62,7 @@ end
     |-> Outer loop sum
 
     naive implementation {if fact cost O(N) every time}:
-    O(N) n * O(N) * O(1) * O(1) = O(N ** 2
+    O(N) n * O(N) * O(1) * O(1) = O(N ** 2)
     
     
 =end

@@ -1,7 +1,22 @@
+    Exercício 2
 
+    outer loop -> O(N)
 
-fatorial -> O(N)
+    factorial -> first time = O(N) 
+              -> other times = O(1) [because of memorization]
 
+    calc func -> O(1) multiplication cost, since x ** y is native
 
-taylor O(K)
+    my implementation: 
+    O(N) + O(N) * O(1) * O(1) = O(N)
+    |      |        |       |
+    |      |        |       |-> power and division
+    |      |        |
+    |      |        |-> Subsequent factorials
+    |      |
+    |      |-> First Factorial
+    |
+    |-> Outer loop sum
 
+    naive implementation {if fact cost O(N) every time}:
+    O(N) n * O(N) * O(1) * O(1) = O(N ** 2)
